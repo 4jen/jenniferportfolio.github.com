@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="../bootstrap.css">
+    <style type="text/css">
+        .btn-calc {
+            padding: 20px 0px;
+        }
+
+    </style>
+</head>
+<body>
+
+<script type="text/JavaScript">
+
+    let resetVisor = false;
+    const divContainer = document.createElement("div");
+
+    divContainer.classList.add('container');
+    divContainer.classList.add('bg-secondary');
+    divContainer.classList.add('col-4');
+
+    const title = document.createElement('h1');
+    title.innerHTML = "Calculator";
+    title.classList.add('text-center');
+    title.classList.add('text-light');
+    divContainer.append(title);
+
+    let divInputResult = document.createElement ("div");
+    divInputResult.classList.add('row');
+    divInputResult.classList.add('justify-content-center');
+
+    let inputResult = document.createElement("input");
+    inputResult.id = "visor";
+    inputResult.placeholder = "0";
+    inputResult.classList.add('form-control');
+    inputResult.disabled = true;
+    divInputResult.append(inputResult);
+    divContainer.appendChild(divInputResult);
+
+<!-- FIRST LINE -->
+    let divFirstLine = document.createElement('div');
+    divFirstLine.classList.add('row');
+    divFirstLine.classList.add('justify-content-center');
+
+    let buttonC = document.createElement('button');
+    buttonC.classList.add('btn');
+    buttonC.classList.add('btn-dark');
+    buttonC.classList.add('btn-Ig');
+    buttonC.classList.add('font-weight-light');
+    buttonC.classList.add('border');
+    buttonC.classList.add('border-light');
+    buttonC.classList.add('btn-calc');
+    buttonC.classList.add('col-6');
+    buttonC.innerHTML = "C";
+    buttonC.onclick = function() {
+        var visor = document.getElementById('visor');
+        visor.value += "";
+    };
+    divFirstLine.append(buttonC);
+
+    let buttonDivider = document.createElement('button');
+    buttonDivider.classList.add('btn');
+    buttonDivider.classList.add('btn-dark');
+    buttonDivider.classList.add('btn-Ig');
+    buttonDivider.classList.add('font-weight-light');
+    buttonDivider.classList.add('border');
+    buttonDivider.classList.add('border-light');
+    buttonDivider.classList.add('btn-calc');
+    buttonDivider.classList.add('col-3');
+    buttonDivider.innerHTML = "/";
+    buttonDivider.onclick = function() {
+        let visor = document.getElementById('visor');
+
+        if(resetVisor){
+            resetVisor = false;
+            visor.value = "";
+        }
+
+        if(visor.value == ""){
+            return;
+        }
+
+        visor.value += "/";
+    };
+    divFirstLine.append(buttonDivider);
+
+    let buttonMulti = document.createElement('button');
+    buttonMulti.classList.add('btn');
+    buttonMulti.classList.add('btn-dark');
+    buttonMulti.classList.add('btn-Ig');
+    buttonMulti.classList.add('font-weight-light');
+    buttonMulti.classList.add('border');
+    buttonMulti.classList.add('border-light');
+    buttonMulti.classList.add('btn-calc');
+    buttonMulti.classList.add('col-3');
+    buttonMulti.innerHTML = "X";
+    buttonMulti.onclick = function() {
+        let visor = document.getElementById('visor');
+
+        if(resetVisor){
+            resetVisor = false;
+            visor.value = "";
+        }
+
+        if(visor.value == ""){
+            return;
+        }
+
+        visor.value += "*";
+    };
+    divFirstLine.append(buttonMulti);
+
+    divContainer.append(divFirstLine);
+
+<!-- SECOND LINE -->
+    let divSecondLine = document.createElement('div');
+    divSecondLine.classList.add('row');
+    divSecondLine.classList.add('justify-content-center');
+
+    let button7 = document.createElement('button');
+    button7.classList.add('btn');
+    button7.classList.add('btn-dark');
+    button7.classList.add('btn-Ig');
+    button7.classList.add('font-weight-light');
+    button7.classList.add('border');
+    button7.classList.add('border-light');
+    button7.classList.add('btn-calc');
+    button7.classList.add('col-3');
+    button7.innerHTML = "7";
+    button7.onclick = function() {
+        let visor = document.getElementById('visor');
+
+        if(resetVisor){
+            resetVisor = false;
+            visor.value = "";
+        }
+
+        visor.value += "7";
+    }
+    divSecondLine.append(button7);
+
+    let button8 = document.createElement('button');
+    button8.classList.add('btn');
+    button8.classList.add('btn-dark');
+    button8.classList.add('btn-Ig');
+    button8.classList.add('font-weight-light');
+    button8.classList.add('border');
+    button8.classList.add('border-light');
+    button8.classList.add('btn-calc');
+    button8.classList.add('col-3');
+    button8.innerHTML = "8";
+    button8.onclick = function() {
+        let visor = document.getElementById('visor');
+
+        if(resetVisor){
+            resetVisor = false;
+            visor.value = "";
+        }
+
+        visor.value += "8";
+    }
+    divSecondLine.append(button8);
+
+    let button9 = document.createElement('button');
+    button9.classList.add('btn');
+    button9.classList.add('btn-dark');
+    button9.classList.add('btn-Ig');
+    button9.classList.add('font-weight-light');
+    button9.classList.add('border');
+    button9.classList.add('border-light');
+    button9.classList.add('btn-calc');
+    button9.classList.add('col-3');
+    button9.innerHTML = "9";
+    button9.onclick = function() {
+        let visor = document.getElementById('visor');
+
+        if(resetVisor){
+            resetVisor = false;
+            visor.value = "";
+        }
+
+        visor.value += "9";
+    }
+    divSecondLine.append(button9);
+
+    let buttonSub = document.createElement('button');
+    buttonSub.classList.add('btn');
+    buttonSub.classList.add('btn-dark');
+    buttonSub.classList.add('btn-Ig');
+    buttonSub.classList.add('font-weight-light');
+    buttonSub.classList.add('border');
+    buttonSub.classList.add('border-light');
+    buttonSub.classList.add('btn-calc');
+    buttonSub.classList.add('col-3');
+    buttonSub.innerHTML = "-";
+    buttonSub.onclick = function() {
+        let visor = document.getElementById('visor');
+
+        if(resetVisor){
+            resetVisor = false;
+            visor.value = "";
+        }
+
+        if(visor.value == ""){
+            return;
+        }
+
+        visor.value += "-";
+    };
+    divSecondLine.append(buttonSub);
+
+    divContainer.append(divSecondLine);
+
+<!-- THIRD LINE -->
+    let divThirdLine = document.createElement('div');
+    divThirdLine.classList.add('row');
+    divThirdLine.classList.add('justify-content-center');
+
+    let button4 = document.createElement('button');
+    button4.classList.add('btn');
+    button4.classList.add('btn-dark');
+    button4.classList.add('btn-Ig');
+    button4.classList.add('font-weight-light');
+    button4.classList.add('border');
+    button4.classList.add('border-light');
+    button4.classList.add('btn-calc');
+    button4.classList.add('col-3');
+    button4.innerHTML = "4";
+    button4.onclick = function() {
+        let visor = document.getElementById('visor');
+
+        if(resetVisor){
+            resetVisor = false;
+            visor.value = "";
+        }
+
+        visor.value += "4";
+    }
+    divThirdLine.append(button4);
+
+    let button5 = document.createElement('button');
+    button5.classList.add('btn');
+    button5.classList.add('btn-dark');
+    button5.classList.add('btn-Ig');
+    button5.classList.add('font-weight-light');
+    button5.classList.add('border');
+    button5.classList.add('border-light');
+    button5.classList.add('btn-calc');
+    button5.classList.add('col-3');
+    button5.innerHTML = "5";
+    button5.onclick = function() {
+        let visor = document.getElementById('visor');
+
+        if(resetVisor){
+            resetVisor = false;
+            visor.value = "";
+        }
+
+        visor.value += "5";
+    }
+    divThirdLine.append(button5);
+
+    let button6 = document.createElement('button');
+    button6.classList.add('btn');
+    button6.classList.add('btn-dark');
+    button6.classList.add('btn-Ig');
+    button6.classList.add('font-weight-light');
+    button6.classList.add('border');
+    button6.classList.add('border-light');
+    button6.classList.add('btn-calc');
+    button6.classList.add('col-3');
+    button6.innerHTML = "6";
+    button6.onclick = function() {
+        let visor = document.getElementById('visor');
+
+        if(resetVisor){
+            resetVisor = false;
+            visor.value = "";
+        }
+
+        visor.value += "6";
+    }
+    divThirdLine.append(button6);
+
+    let buttonAdd = document.createElement('button');
+    buttonAdd.classList.add('btn');
+    buttonAdd.classList.add('btn-dark');
+    buttonAdd.classList.add('btn-Ig');
+    buttonAdd.classList.add('font-weight-light');
+    buttonAdd.classList.add('border');
+    buttonAdd.classList.add('border-light');
+    buttonAdd.classList.add('btn-calc');
+    buttonAdd.classList.add('col-3');
+    buttonAdd.innerHTML = "+";
+    buttonAdd.onclick = function() {
+        let visor = document.getElementById('visor');
+
+        if(resetVisor){
+            resetVisor = false;
+            visor.value = "";
+        }
+
+        if(visor.value == ""){
+            return;
+        }
+
+        visor.value += "+";
+    };
+    divThirdLine.append(buttonAdd);
+
+    divContainer.append(divThirdLine);
+
+<!-- FORTH LINE -->
+    let divForthLine = document.createElement('div');
+    divForthLine.classList.add('row');
+    divForthLine.classList.add('justify-content-center');
+
+    let button1 = document.createElement('button');
+    button1.classList.add('btn');
+    button1.classList.add('btn-dark');
+    button1.classList.add('btn-Ig');
+    button1.classList.add('font-weight-light');
+    button1.classList.add('border');
+    button1.classList.add('border-light');
+    button1.classList.add('btn-calc');
+    button1.classList.add('col-3');
+    button1.innerHTML = "1";
+    button1.onclick = function() {
+        let visor = document.getElementById('visor');
+
+        if(resetVisor){
+            resetVisor = false;
+            visor.value = "";
+        }
+
+        visor.value += "1";
+    }
+    divForthLine.append(button1);
+
+    let button2 = document.createElement('button');
+    button2.classList.add('btn');
+    button2.classList.add('btn-dark');
+    button2.classList.add('btn-Ig');
+    button2.classList.add('font-weight-light');
+    button2.classList.add('border');
+    button2.classList.add('border-light');
+    button2.classList.add('btn-calc');
+    button2.classList.add('col-3');
+    button2.innerHTML = "2";
+    button2.onclick = function() {
+        let visor = document.getElementById('visor');
+
+        if(resetVisor){
+            resetVisor = false;
+            visor.value = "";
+        }
+
+        visor.value += "2";
+    }
+    divForthLine.append(button2);
+
+    let button3 = document.createElement('button');
+    button3.classList.add('btn');
+    button3.classList.add('btn-dark');
+    button3.classList.add('btn-Ig');
+    button3.classList.add('font-weight-light');
+    button3.classList.add('border');
+    button3.classList.add('border-light');
+    button3.classList.add('btn-calc');
+    button3.classList.add('col-3');
+    button3.innerHTML = "3";
+    button3.onclick = function() {
+        let visor = document.getElementById('visor');
+
+        if(resetVisor){
+            resetVisor = false;
+            visor.value = "";
+        }
+
+        visor.value += "3";
+    }
+    divForthLine.append(button3);
+
+    let buttonDot = document.createElement('button');
+    buttonDot.classList.add('btn');
+    buttonDot.classList.add('btn-dark');
+    buttonDot.classList.add('btn-Ig');
+    buttonDot.classList.add('font-weight-light');
+    buttonDot.classList.add('border');
+    buttonDot.classList.add('border-light');
+    buttonDot.classList.add('btn-calc');
+    buttonDot.classList.add('col-3');
+    buttonDot.innerHTML = ".";
+    buttonDot.onclick = function() {
+        let visor = document.getElementById('visor');
+
+        if(resetVisor){
+            resetVisor = false;
+            visor.value = "";
+        }
+
+        visor.value += ".";
+    }
+    divForthLine.append(buttonDot);
+
+    divContainer.append(divForthLine);
+
+<!-- FIFTH LINE -->
+    let divFifthLine = document.createElement('div');
+    divFifthLine.classList.add('row');
+    divFifthLine.classList.add('justify-content-center');
+
+    let button0 = document.createElement('button');
+    button0.classList.add('btn');
+    button0.classList.add('btn-dark');
+    button0.classList.add('btn-Ig');
+    button0.classList.add('font-weight-light');
+    button0.classList.add('border');
+    button0.classList.add('border-light');
+    button0.classList.add('btn-calc');
+    button0.classList.add('col-3');
+    button0.innerHTML = "0";
+    button0.onclick = function() {
+        let visor = document.getElementById('visor');
+
+        if(resetVisor){
+            resetVisor = false;
+            visor.value = "";
+        }
+
+        visor.value += "0";
+    }
+    divFifthLine.append(button0);
+
+    let buttonEqual = document.createElement('button');
+    buttonEqual.classList.add('btn');
+    buttonEqual.classList.add('btn-dark');
+    buttonEqual.classList.add('btn-Ig');
+    buttonEqual.classList.add('font-weight-light');
+    buttonEqual.classList.add('border');
+    buttonEqual.classList.add('border-light');
+    buttonEqual.classList.add('btn-calc');
+    buttonEqual.classList.add('col-9');
+    buttonEqual.innerHTML = "=";
+    buttonEqual.onclick = function() {
+        let visor = document.getElementById('visor');
+
+        try{
+            let result = eval(visor.value);
+            if(isNaN(parseFloat(result)) || !isFinite(result)) {
+                visor.value = "Expression Error";
+            } else {
+                visor.value = result;
+            }
+        } catch(e) {
+            visor.value = "Expression Error";
+        }
+        resetVisor = true;
+    };
+    divFifthLine.append(buttonEqual);
+
+    divContainer.append(divFifthLine);
+
+
+    document.body.append(divContainer);
+
+</script>
+
+</body>
+
+
+</html>

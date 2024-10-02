@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Private Budget Table</title>
+    <style type="text/css">
+        body{
+            font-family: 'Roboto', sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #ffd000;
+            border-bottom: #ffde48 solid 5px;
+            padding: 5px 15px;
+        }
+        header h1{
+            color: #fff;
+        }
+        main{
+            padding: 125px 10px;
+            margin: auto;
+        }
+        footer{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background: #ffd000;
+            color: #fff;
+        }
+        table{
+            padding-bottom: 90px;
+        }
+        table caption{
+            background: #000;
+            color: #fff;
+            text-align: left;
+            padding: 5px 10px;
+        }
+        table th, table td{
+            border: 1px solid #ccc;
+            padding: 5px 15px;
+            border: solid 1px;
+        }
+        .month{
+            background: rgb(0, 112, 192);
+            color: #fff;
+            padding: 0px auto;
+        }
+        .sumTotal{
+            background: rgb(0, 176, 80);
+            color: #fff;
+        }
+        #calculator{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            My wallet<br>
+            <span>- Personal expense control -</span>
+        </h1>
+    </header>
+
+    <main>
+        <p>
+            　以下に、個人の買掛金管理に役立つ簡単で効果的な方法を紹介します。以下の表には、アカウントに関連する月、状況、およびそれぞれの期日が示されています。
+        </p>
+        <p>
+            　電卓は、是非<a href="javascript:void()" onclick="openCalculator()">こちら
+            </a>を押してご利用ください。
+        </p>
+
+        <div class="calculator">
+            <button onclick="cloceCalculator()" type="button" style="float: right;">電卓を閉じる</button>
+            <iframe frameborder="0" height="460px" width="100%" src="./Calculator.html"></iframe>
+        </div>
+
+        <table cellspacing="0">
+            <caption>支出の管理</caption>
+            <thead>
+                <tr>
+                    <th colspan="2" rowspan="2">詳細</th>
+                    <th colspan="3" class="month">1月</th>
+                    <th colspan="3" class="month">2月</th>
+                    <th colspan="3" class="month">3月</th>
+                </tr>
+                <tr>
+                    <th>請求額</th> <th>期日</th> <th>状況</th>
+                    <th>請求額</th> <th>期日</th> <th>状況</th>
+                    <th>請求額</th> <th>期日</th> <th>状況</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td> <td>税</td>
+
+                    <td>5,000円</td> <td>10日</td> <td>支払済</td>
+
+                    <td>5,000円</td> <td>10日</td> <td>代済</td>
+
+                    <td>5,000円</td> <td>10日</td> <td>代済</td>
+                </tr>
+
+                <tr>
+                    <td>2</td> <td>大学費</td>
+
+                    <td>20,000円</td> <td>27日</td> <td>支払済</td>
+
+                    <td>20,000円</td> <td>27日</td> <td>代済</td>
+
+                    <td>20,000円</td> <td>27日</td> <td>代済</td>
+                </tr>
+
+                <tr>
+                    <td>3</td> <td>光熱費</td>
+
+                    <td>13,000円</td> <td>27日</td> <td>支払済</td>
+
+                    <td>13,000円</td> <td>27日</td> <td>代済</td>
+
+                    <td>13,000円</td> <td>27日</td> <td>代済</td>
+                </tr>
+
+                <tr>
+                    <td>4</td> <td>水道代</td>
+
+                    <td>2,000円</td> <td>27日</td> <td>支払済</td>
+
+                    <td>2,000円</td> <td>27日</td> <td>代済</td>
+
+                    <td>2,000円</td> <td>27日</td> <td>代済</td>
+                </tr>
+
+                <tr>
+                    <td>5</td> <td>電気代</td>
+
+                    <td>6,000円</td> <td>27日</td> <td>支払済</td>
+
+                    <td>6,000円</td> <td>27日</td> <td>代済</td>
+
+                    <td>6,000円</td> <td>27日</td> <td>代済</td>
+                </tr>
+
+                <tr>
+                    <td>6</td> <td>ガス代</td>
+
+                    <td>3,000円</td> <td>27日</td> <td>支払済</td>
+
+                    <td>3,000円</td> <td>27日</td> <td>代済</td>
+
+                    <td>3,000円</td> <td>27日</td> <td>代済</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="2"></td>
+                    <td class="sumTotal">49,000円</td>
+
+                    <td colspan="2"></td>
+                    <td class="sumTotal">49,000円</td>
+
+                    <td colspan="2"></td>
+                    <td class="sumTotal">49,000円</td>
+
+                    <td colspan="2"></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <table cellspacing="0">
+            <caption>支出の管理</caption>
+            <thead>
+                <tr>
+                    <th colspan="2" rowspan="2">詳細</th>
+                    <th colspan="3" class="month">4月</th>
+                    <th colspan="3" class="month">5月</th>
+                    <th colspan="3" class="month">6月</th>
+                </tr>
+                <tr>
+                    <th>請求額</th> <th>期日</th> <th>状況</th>
+                    <th>請求額</th> <th>期日</th> <th>状況</th>
+                    <th>請求額</th> <th>期日</th> <th>状況</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td> <td>税</td>
+
+                    <td>5,000円</td> <td>10日</td> <td>代済</td>
+
+                    <td>5,000円</td> <td>10日</td> <td>代済</td>
+
+                    <td>5,000円</td> <td>10日</td> <td>代済</td>
+                </tr>
+
+                <tr>
+                    <td>2</td> <td>大学費</td>
+
+                    <td>20,000円</td> <td>27日</td> <td>代済</td>
+
+                    <td>20,000円</td> <td>27日</td> <td>代済</td>
+
+                    <td>20,000円</td> <td>27日</td> <td>代済</td>
+                </tr>
+
+                <tr>
+                    <td>3</td> <td>光熱費</td>
+
+                    <td>13,000円</td> <td>27日</td> <td>代済</td>
+
+                    <td>13,000円</td> <td>27日</td> <td>代済</td>
+
+                    <td>13,000円</td> <td>27日</td> <td>代済</td>
+                </tr>
+
+                <tr>
+                    <td>4</td> <td>水道代</td>
+
+                    <td>2,000円</td> <td>27日</td> <td>代済</td>
+
+                    <td>2,000円</td> <td>27日</td> <td>代済</td>
+
+                    <td>2,000円</td> <td>27日</td> <td>代済</td>
+                </tr>
+
+                <tr>
+                    <td>5</td> <td>電気代</td>
+
+                    <td>6,000円</td> <td>27日</td> <td>代済</td>
+
+                    <td>6,000円</td> <td>27日</td> <td>代済</td>
+
+                    <td>6,000円</td> <td>27日</td> <td>代済</td>
+                </tr>
+
+                <tr>
+                    <td>6</td> <td>ガス代</td>
+
+                    <td>3,000円</td> <td>27日</td> <td>代済</td>
+
+                    <td>3,000円</td> <td>27日</td> <td>代済</td>
+
+                    <td>3,000円</td> <td>27日</td> <td>代済</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="2"></td>
+                    <td class="sumTotal">49,000円</td>
+
+                    <td colspan="2"></td>
+                    <td class="sumTotal">49,000円</td>
+
+                    <td colspan="2"></td>
+                    <td class="sumTotal">49,000円</td>
+
+                    <td colspan="2"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+
+    <footer>
+        <p>
+            My wallet<br>
+            <small>- Personal expense control -</small>
+        </p>
+    </footer>
+
+    <script type="text/javascript">
+        function openCalculator(){
+            document.getElementById("calculator").style.display = "block";
+        }
+
+        function cloceCalculator(){
+            document.getElementById("calculator").style.display = "none";
+        }
+    </script>
+</body>
+</html>

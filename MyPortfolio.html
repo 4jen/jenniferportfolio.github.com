@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" shrink-to-fit="no">
+    <link rel="stylesheet" href="bootstrap.css">
+    <!--Responsive Card Grid Layout section-->
+    <style>
+        button {
+            border: #fff solid;
+            border-radius: 20px;
+            background-color: #fff;
+            color: #42a2f1;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cards_item {
+            display: flex;
+            padding: 1rem;
+        }
+
+        @media (min-width: 40rem) {
+        .cards_item {
+            width: 50%;
+        }
+        }
+
+        @media (min-width: 56rem) {
+        .cards_item {
+            width: 33.3333%;
+        }
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 0.25rem;
+            box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .card_content {
+            padding: 1rem;
+            background: linear-gradient(to bottom left, #42a2f1 30%, #434eb7 100%);
+        }
+
+        .card_title {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            margin: 0px;
+        }
+
+        .card_text {
+            color: #ffffff;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+            font-weight: 400;
+        }
+    </style>
+    <!--Dropdown section-->
+    <style>
+      .dropbtn {
+        background-color: #42a2f1;
+        color: white;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .dropbtn:hover, .dropbtn:focus {
+        background: linear-gradient(to bottom left, #42a2f1 30%, #434eb7 100%);
+      }
+
+      .dropdown {
+        float: right;
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        right: 0;
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown a:hover {
+        background-color: #ddd;
+      }
+
+      .show {
+        display: block;
+      }
+  </style>
+    <title>Jennifer Nishimura's Portfolio</title>
+</head>
+<body>
+<!--NAV section-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container justify-content-between text-white">
+        <h3 class="py-2 d-md-inline-block">My Portfolio</h3>
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+<!--HOME section-->
+    <section id="home">
+        <div class="overflow-hidden mb-4 text-center bg-dark text-white">
+            <div class="p-lg-5 mt-5">
+                <h1 class="display-4"><strong>My Portfolio</strong></h1>
+                <p class="lead">Graphic designer & Web designer</p>
+            </div>
+        </div>
+    </section>
+<!--ABOUT section-->
+    <section id="about" class="container mb-5 mt-5">
+        <div class="row">
+            <div class="col-md-7 mt-5">
+                <h2 class="featurette-heading mb-5">
+                    Portfolio by<br>
+                    <span class="text-muted">Jennifer Nishimura</span>
+                </h2>
+                <p class="lead">
+                  　西村ジェニファーと申します。ブラジル出身で3歳から日本で育たれ、日本語をお学びになりました。現在は、ポルトガル語、英語、そして日本語の3カ国語をお話しになれるようになられました。
+                  <br>
+                  　現在、日本で20年ほど生活しており、児童館の事務補助員として日本国籍取得に取り組んでおります。
+                </p>
+                <p class="lead">
+                  　幼い頃から現在に至るまで、デザインに関連する趣味を持ち続けてまいりました。そして、2022年度にグラフィックデザイナー学科の京都美術工芸大学を卒業いたしました。
+                  <br>
+                  　その間、HTMLやCSSに興味を持ち、自作したキャラクターデザインやその情報をまとめて『ToyHouse』というサイトの中で制作いたしました。その経験から、これまで習得してきたコーディングのスキルを活かしたいという思いに至り、オンラインコースでWebデザイナーになるためのコーディングを学習し、今も取り組んでまいます。
+                </p>
+            </div>
+            <div class="col-md-5">
+                <img src="./IMG/Luis' Commission_1.png" class="img-fluid">
+            </div>
+        </div>
+    </section>
+    <hr>
+<!--GALLERY section-->
+    <section id="gallery">
+        <div class="pricing-header text-center mt-5">
+            <h1 class="mt-5">My Gallery</h1>
+            <p>2017年頃より、イラストレーターとしてフリーランスとして活動を始め、イラストや似顔絵を制作し、お客様に提供しておりました。<br>
+            その中から、これまで制作した作品を紹介させていただきます。
+          </p>
+        </div>
+        <div class="main">
+            <ul class="cards">
+              <li class="cards_item">
+                <div class="card">
+                  <div class="card_image"><img style="width: 500px; height: 360px;" src="./IMG/Caricature.jpg"></div>
+                  <div class="card_content">
+                    <h2 class="card_title">似顔絵</h2>
+                    <p class="card_text">2024年2月頃に制作した、友人3人の似顔絵のオーダーを受けました。3人それぞれに渡せるように同じ似顔絵を制作いたしました。</p>
+                  </div>
+                </div>
+              </li>
+              <li class="cards_item">
+                <div class="card">
+                  <div class="card_image"><img style="width: auto; height: 360px;" src="./IMG/FR_Hocotate.png"></div>
+                  <div class="card_content">
+                    <h2 class="card_title">イラスト</h2>
+                    <p class="card_text">私は、幼い頃からイラストを描いてまいりました。その中でも、お客様の自作キャラクターデザインで制作したピクセルアートの作品に最もプライドを持っております。
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="cards_item">
+                <div class="card">
+                  <div class="card_image"><iframe style="width: 500px; height: 360px;" src="./Lesson 4/Budget Finance.html"></iframe>
+                  <div class="card_content">
+                    <h2 class="card_title">Web制作</h2>
+                    <p class="card_text">実際の実務で用いるウェブページはまだ制作したことがありませんが、このページはオンラインコースで制作したものです。</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+    </section>
+    <hr>
+<!--CONTACT section-->
+    <section id="contact">
+        <div class="container mb-4">
+            <h1 class="mt-5">Contact</h1>
+            <div class="row col-md-12">
+                <div class="col-md-6">
+                    <p class="mt-5">Contact me image goes here!
+                    </p>
+                </div>
+                <div class="col-md-6" style="padding: 0 !important;">
+                    <form>
+                        <div class="form-group mb-2">
+                            <lagel for="name">Name:</lagel>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <lagel for="email">E-mail:</lagel>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <lagel for="tel">Telephone number:</lagel>
+                            <input type="number" class="form-control" id="tel" name="tel" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <lagel for="nameBusiness">Business name:</lagel>
+                            <input type="text" class="form-control" id="nameBusiness" name="nameBusiness" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <lagel for="message">Write a message:</lagel>
+                            <textarea class="form-control" id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--FOOTER section-->
+    <footer id="footer">
+      <div class="overflow-hidden mt-4 bg-dark justify-content-between p-lg-4">
+        <button class="py-1 px-2 mx-2 d-md-inline-block" href="#">Tumblr</button>
+        <button class="py-1 px-2 mx-2 d-md-inline-block" href="#">Instagram</button>
+        <button class="py-1 px-2 mx-2 d-md-inline-block" href="#">Carrd</button>
+      </div>
+    </footer>
+</body>
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</html>
